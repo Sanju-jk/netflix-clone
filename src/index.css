@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ensures html and body occupy full height of the viewport */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;    /* Allow vertical scrolling */
+}
+
+/* Apply this to the main container or wrapper if necessary */
+.container, .app {
+  min-height: 100vh; /* Make sure the main container does not overflow */
+  overflow-y: auto;
+  /* Remove overflow-x: hidden here */
+}
+
+
+
