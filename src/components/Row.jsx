@@ -48,7 +48,7 @@ export default function Row({ title, movies }) {
     // Check scroll position on initial load and when scrolled
     useEffect(() => {
         checkScrollPosition();
-    }, []); // Only run this once when the component mounts
+    }, [movies]); 
 
     useEffect(() => {
         // Listen to the scroll event to update button visibility

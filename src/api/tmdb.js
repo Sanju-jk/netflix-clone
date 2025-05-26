@@ -12,7 +12,7 @@ const tmdb = axios.create({
     },
   });
   
-  // API calls
+  // API calls for home page
   export const getTrending = () => tmdb.get('/trending/all/week');
   export const getTopRated = () => tmdb.get('/movie/top_rated');
   export const getPopularTV = () => tmdb.get('/tv/popular');
@@ -20,5 +20,15 @@ const tmdb = axios.create({
     tmdb.get('/discover/movie', {
       params: { with_genres: genreId },
     });
+
+// Api calls for movies page
+  export const getPopularMovies = () => tmdb.get('/movie/popular');
+  export const getUpcomingMovies = () => tmdb.get('/movie/upcoming');
+  export const getLatestMovies = () => tmdb.get('/movie/now_playing');
+
+// Api calls for tv shows
+  export const getTopRatedTvShows = () => tmdb.get('/tv/top_rated');
+  export const getLatestTvShows = () => tmdb.get('/tv/airing_today');
+
   
   export default tmdb;
