@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 
-export default function Row({ title, movies }) {
+export default function Row({ title, movies, type, onItemClick }) {
     const rowRef = useRef(null);
     const [canScrollLeft, setCanScrollLeft] = useState(false);
     const [canScrollRight, setCanScrollRight] = useState(true);
@@ -94,6 +94,7 @@ export default function Row({ title, movies }) {
                         <div
                             key={movie.id}
                             className="relative flex-shrink-0 group overflow-hidden border-4 border-transparent hover:border-white transition-all duration-300 rounded-lg"
+                            onClick={()=> onItemClick(movie, type)}
                         >
                             {/* Movie Card */}
                             <img

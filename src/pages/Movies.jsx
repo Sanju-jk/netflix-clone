@@ -3,6 +3,7 @@ import Row from "../components/Row";
 import { getPopularMovies, getTopRated, getUpcomingMovies, getLatestMovies } from "../api/tmdb";
 import Navbar from "../components/Navbar";
 import Loader from "../components/Loader";
+import Modal from "../components/Modal";
 
 export default function MoviesPage() {
     const [popular, setPopular] = useState([]);
@@ -10,6 +11,10 @@ export default function MoviesPage() {
     const [upcoming, setUpcoming] = useState([]);
     const [latest, setLatest] = useState([]);
     const [loading, setLoading] = useState(true);
+
+    const [selectedItem, setSelectedItem] = useState(null);
+    const [selectedType, setSelectedType] = useState(null);
+    const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -33,16 +38,28 @@ export default function MoviesPage() {
         fetchData();
     }, []);
 
+    const handleItemClick = (item, type) => {
+        setSelectedItem(item);
+        setSelectedType(type);
+        setShowModal(true);
+    };
+
     if (loading) return <Loader />
 
     return (
         <>
             <Navbar />
-            <div className="bg-black min-h-screen text-white pt-20">
-                <Row title="Skip The Queue" movies={latest} />
-                <Row title="Popular Movies" movies={popular} />
-                <Row title="Top Rated Movies" movies={topRated} />
-                <Row title="Upcoming Movies" movies={upcoming} />
+            <div className="bg-gray-900 min-h-screen text-white pt-20">
+                <Row title="Skip The Queue" movies={latest} type='movie' onItemClick={handleItemClick} />
+                <Row title="Popular Movies" movies={popular} type='movie' onItemClick={handleItemClick} />
+                <Row title="Top Rated Movies" movies={topRated} type='movie' onItemClick={handleItemClick} />
+                <Row title="Upcoming Movies" movies={upcoming} type='movie' onItemClick={handleItemClick} />
+                <Modal
+                    show={showModal}
+                    onClose={() => setShowModal(false)}
+                    content={selectedItem}
+                    type={selectedType}
+                />
             </div>
         </>
     );
