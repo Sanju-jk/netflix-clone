@@ -27,13 +27,17 @@ export const getTopRatedTvShows = () => tmdb.get('/tv/top_rated');
 export const getLatestTvShows = () => tmdb.get('/tv/airing_today');
 
 //API call for fetching movie/tv show details for modal
-
 export const getDetails = (id, type) =>
   tmdb.get(`/${type}/${id}`, {
     params: {
       language: 'en-US',
     },
   });
+
+//Api call for fetching trailer video
+export const getTrailer = (id, type) =>
+  tmdb.get(`/${type}/${id}/videos`);
+
 
 
 
