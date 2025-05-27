@@ -34,6 +34,9 @@ export default function Modal({ show, onClose, content, type }) {
         };
 
         fetchDetails();
+        return () => {
+            setShowTrailer(false); // Reset trailer state when the component unmounts or content changes
+        };
     }, [content, type, show]);
 
     if (!show || !details) return null;
