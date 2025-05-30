@@ -49,7 +49,7 @@ export default function Home() {
   return (
     <div className="bg-gray-900 min-h-screen">
       <Navbar />
-      <Banner />
+      <Banner/>
       <Row title="Trending Now" movies={trendingMovies} type='movie' onItemClick={handleItemClick} />
       <Row title="Top Rated" movies={topRatedMovies} type='movie' onItemClick={handleItemClick} />
       <Row title="Popular TV Shows" movies={popularTV} type='tv' onItemClick={handleItemClick} />

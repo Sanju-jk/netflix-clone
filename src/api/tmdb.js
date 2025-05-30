@@ -38,6 +38,14 @@ export const getDetails = (id, type) =>
 export const getTrailer = (id, type) =>
   tmdb.get(`/${type}/${id}/videos`);
 
+//Api call for search
+// API call for search
+export const searchContent = (query) =>
+  tmdb.get('/search/multi', {
+    params: {
+      query,
+    },
+  });
 
 
 
