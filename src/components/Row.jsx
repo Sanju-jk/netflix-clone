@@ -71,7 +71,7 @@ export default function Row({ title, movies, type, onItemClick }) {
 
     return (
         <div className="p-4">
-            <h2 className="text-2xl font-semibold text-white">{title}</h2>
+            <h2 className="text-2xl font-semibold text-slate-200">{title}</h2>
 
             {/* Row container with no horizontal scrollbar */}
             <div className="relative mt-4">
@@ -93,7 +93,7 @@ export default function Row({ title, movies, type, onItemClick }) {
                     {movies.map((movie) => (
                         <div
                             key={movie.id}
-                            className="relative flex-shrink-0 group overflow-hidden border-4 border-transparent hover:border-white transition-all duration-300 rounded-lg"
+                            className="relative flex-shrink-0 group overflow-hidden border-4 border-transparent hover:border-purple-700 transition-all duration-300 rounded-lg"
                             onClick={()=> onItemClick(movie, type)}
                         >
                             {/* Movie Card */}
@@ -105,7 +105,7 @@ export default function Row({ title, movies, type, onItemClick }) {
 
                             {/* Movie Name on Hover */}
                             <div className="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out rounded-lg">
-                                <p className="text-white text-lg">{movie.title || movie.name}</p>
+                                <p className="text-slate-200 text-lg">{movie.title || movie.name}</p>
                             </div>
                         </div>
                     ))}

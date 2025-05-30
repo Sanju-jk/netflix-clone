@@ -6,7 +6,7 @@ export default function Navbar() {
     const navigate = useNavigate();
 
     return (
-        <nav className="sticky top-0 z-50 bg-black bg-opacity-90 text-white p-4 shadow-md">
+        <nav className="sticky top-0 z-50 bg-black bg-opacity-90 text-slate-300 p-4 shadow-md">
             <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between space-y-2 sm:space-y-0">
 
                 <Link
@@ -23,14 +23,14 @@ export default function Navbar() {
 
                     {/* Title */}
                     <div>
-                        <span className="text-white">Stream</span>
+                        <span className="text-slate-300">Stream</span>
                         <span className="text-purple-500">Berry</span>
                     </div>
                 </Link>
 
 
                 {/* Navigation Links */}
-                <ul className="flex flex-wrap justify-center sm:justify-start items-center gap-4 sm:gap-6 font-semibold text-base sm:text-lg">
+                <ul className="flex flex-wrap justify-center sm:justify-start items-start gap-4 sm:gap-6 font-semibold text-base sm:text-lg">
                     <li>
                         <Link
                             to="/"
