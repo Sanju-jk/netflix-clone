@@ -68,7 +68,7 @@ export default function Modal({ show, onClose, content, type }) {
                     {/* Exit Button */}
                     <button
                         onClick={onClose}
-                        className="absolute top-4 right-4 z-50 text-white text-3xl font-bold hover:text-red-500"
+                        className="absolute top-4 right-4 z-50 text-white text-3xl font-bold hover:text-purple-500"
                         style={{ pointerEvents: 'auto' }}
                     >
                         &times;
@@ -82,7 +82,7 @@ export default function Modal({ show, onClose, content, type }) {
                     {/* Exit Button */}
                     <button
                         onClick={onClose}
-                        className="absolute top-4 right-4 text-white text-2xl font-bold hover:text-red-500 z-20"
+                        className="absolute top-4 right-4 text-white text-2xl font-bold hover:text-purple-500 z-20"
                         style={{ pointerEvents: 'auto' }}
                     >
                         &times;
@@ -120,7 +120,7 @@ export default function Modal({ show, onClose, content, type }) {
                             {trailerKey && (
                                 <button
                                     onClick={() => setShowTrailer(true)}
-                                    className="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-lg text-sm transition duration-300"
+                                    className="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-lg text-sm transition duration-300"
                                     style={{ pointerEvents: 'auto' }}
                                 >
                                     ▶ Watch Trailer
